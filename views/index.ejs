@@ -1,6 +1,6 @@
 <!-- Student NAme: Abhilash Pagidimarry
 Student ID: 301130925
-Date: 10/08/2021 -->
+Date: 10/08/2020 -->
 
 
 <!doctype html>
@@ -129,6 +129,20 @@ body {
   width: 100%;
   height: auto;
 }
+.header-top {
+  padding-top: 20px;
+  padding-left: 30px;
+  background-color: seashell;
+  padding-bottom: 5px;
+}
+
+  .fixed-tops {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+  }
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -158,7 +172,12 @@ body {
   </head>
   <body>
     <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div>
+        <p class="header-top">
+          Assignment-1,  Abhilash Pagidimarry,  301130925 8th Oct 2020.
+        </p>
+      </div>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-tops bg-dark">
     <span><img class="logo" src="/images/graduate.svg" /></span>
     <!-- <svg class="bd-placeholder-img rounded-circle" width="50" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#f4623a"/><text x="50%" y="50%" fill="white" dy=".3em">AA</text></svg> -->
     <a class="navbar-brand" href="#">My Portfolio</a>
