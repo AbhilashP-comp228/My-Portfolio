@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .main
+        {
+            width: 100%;
+            height: 100vh;
+            background: #fff;
+        }
+        .main-title
+        {
+            margin-left: 41%;
+            margin-top: 5%;
+            font-size: 30px;
+        }
+        .business-list
+        {
+            margin-top: 20px;
+            margin-left: 40px;
+            width: 80%;
+            height: 80vh;
+        }
+        .business-list-title
+        {
+            font-size: 18px;
+            margin-left: 49%;
+            margin-top: 7%;
+        }
+        .table
+        {
+            width: 90%;
+            top: 0;
+            margin-top: 2%;
+            margin-left: 20%;
+        }
+        .table th,
+        .table td
+        {
+            padding: 8px;
+            line-height: 20px;
+            text-align: left;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+        .table th
+        {
+            font-weight: bold;
+        }
+        .table thead th
+        {
+            vertical-align: bottom;
+        }
+                /********* NAVBAR **********/
+
+                .navbar
+        {
+            padding: .5rem 1rem;
+            height: 9vh;
+            background: #343a40;
+        }
+        .logo
+        {
+            position: absolute;
+            top: 0;
+            margin-left: 30px;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 25px;
+        }
+        .navbar ul
+        {
+            display: flex;
+            position: absolute;
+            top: 0;
+            margin-left: 70%;
+            margin-top: 20px;
+        }
+        .navbar ul li
+        {
+            list-style: none;
+            padding: 5px;
+            margin: 5px;
+        }
+        .navbar ul li a
+        {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <div class="navbar">
+            <img src="https://i.imgur.com/wCZAatg.png" height="60" width="70"/><a href="#" class="logo">DASHBOARD</a>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/updatecontact">UPDATE CONTACTS</a></li>
+                <li><a href="logout">LOGOUT</a></li>
+            </ul>
+        </div>
+        <h1 class="main-title">Dashboard</h1>
+        <div class="business-list">
+            <h2 class="business-list-title">
+                Business Contacts List
+            </h2>
+            <table class="table">
+                <tr>
+                    <th>Contact Name</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                </tr>
+                <tr>
+                    <% for (var i = 0; i < user.contacts.length; /* I save the data in a variable 'quotation', I don't know how you named your variable  */  i++) { %>
+                        <tr>
+                          <td><%= user.contacts[i].name %></td>
+                          <td><%= user.contacts[i].phonenum %></td>
+                          <td><%= user.contacts[i].email %></td>
+                        </tr>
+                       <% } %>
+                </tr>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

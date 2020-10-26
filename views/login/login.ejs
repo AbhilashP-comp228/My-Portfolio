@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Panel</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .main
+        {
+            width: 100%;
+            height: 100vh;
+            background: #555;
+
+        }
+        .login-form
+        {
+            width: 20%;
+            height: 60vh;
+            margin-top: 7%;
+            margin-left: 40%;
+            position: absolute;
+            background: #f6feff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000,
+                        0 0 50px #000,
+                        0 0 100px #000;
+        }
+        .input
+        {
+            position: absolute;
+            margin-top: 70px;
+            margin-left: 20px;
+            opacity: 1 !important;
+        }
+        .input-text
+        {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            background: none;
+            opacity: 1 !important;
+            border-radius: 5px;
+            border-bottom: 1px solid #000 !important;
+        }
+        .input-text::placeholder
+        {
+            color: #000;
+            opacity: 1 !important;
+        }
+        .input-btn
+        {
+            margin-top: 30px;
+            padding: 10px;
+            margin-left: 40px;
+            background: none;
+            border: none;
+            border-radius: 5px;
+            border: 1px solid #000 !important;
+        }
+        .title
+        {
+            margin-left: 70px;
+            margin-top: 10px;
+            position: absolute;
+        }
+        .alert-danger
+        {
+            color: #000;
+            border: 1px solid #000;
+            padding: 10px;
+            position: absolute;
+            background: #df0000;
+            border-radius: 10px;
+            margin-top: 100%;
+            margin-left: 40px;
+
+        }
+        .alert-success
+        {
+          color: #000;
+            border: 1px solid #000;
+            padding: 10px;
+            position: absolute;
+            background: #26e400;
+            border-radius: 10px;
+            margin-top: 100%;
+            margin-left: 40px;
+        }
+        /********* NAVBAR **********/
+
+        .navbar
+        {
+            padding: .5rem 1rem;
+            height: 9vh;
+            background: #343a40;
+        }
+        .logo
+        {
+            position: absolute;
+            top: 0;
+            margin-left: 30px;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        .navbar ul
+        {
+            display: flex;
+            position: absolute;
+            top: 0;
+            margin-left: 80%;
+            margin-top: 20px;
+        }
+        .navbar ul li
+        {
+            list-style: none;
+            padding: 5px;
+            margin: 5px;
+        }
+        .navbar ul li a
+        {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+       <section class="main">
+        <div class="navbar">
+          <img src="https://i.imgur.com/wCZAatg.png" height="40" width="50"/><a href="#" class="logo">Login</a>
+          <ul>
+              <li><a href="/">Home</a></li>
+          </ul>
+      </div>
+        <form action="/login" class="login-form", method="POST">
+        <!--<%include ("./partials/messages")%> -->
+            <h1 class="title">Login Panel</h1>
+            <div class="input">
+                <input class="input-text" type="text" name="email" placeholder="User Name" />
+                <input class="input-text" type="password" name="password" placeholder="password" />
+                <button class="input-btn">Login</button>
+            </div>
+            <% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <%= error.msg %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <% }); %> <% } %> <% if(success_msg != ''){ %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <%= success_msg %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <% } %> <% if(error_msg != ''){ %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <%= error_msg %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <% } %> <% if(error != ''){ %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <%= error %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <% } %>
+        </form>
+    </section>
+</body>
+</html>
