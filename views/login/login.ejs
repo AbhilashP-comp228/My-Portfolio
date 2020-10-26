@@ -29,6 +29,23 @@
                         0 0 50px #000,
                         0 0 100px #000;
         }
+        @media only screen and (max-width: 480px) {
+          .login-form {
+            width: 63%;
+            height: 41vh;
+            margin-top: 29%;
+            margin-left: 18%;
+          }
+        }
+        @media only screen and (min-width:481px) and (max-width:768px) {
+          .login-form {
+            width: 51%;
+            height: 42vh;
+            margin-top: 22%;
+            margin-left: 24%;
+          }
+        }
+
         .input
         {
             position: absolute;
@@ -140,6 +157,7 @@
       </div>
         <form action="/login" class="login-form", method="POST">
         <!--<%include ("./partials/messages")%> -->
+        <div class="col-md-7 order-md-2">
             <h1 class="title">Login Panel</h1>
             <div class="input">
                 <input class="input-text" type="text" name="email" placeholder="User Name" />
