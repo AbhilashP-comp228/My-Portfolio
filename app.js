@@ -1,3 +1,9 @@
+/*
+Name: Abhilash Pagidimarry
+Student ID: 301130925
+File name: AbhilashP_COMP229_assignment2
+Date: 23/10/2020
+*/
 const express = require('express');
 var path = require('path');
 const app = express();
@@ -6,7 +12,9 @@ const passport = require('passport');
 
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
-var url = "mongodb+srv://user:1234@cluster0.flpmu.mongodb.net/assignment";
+// var url = "mongodb://localhost/BusinessListDB";
+// var url = "mongodb+srv://user:1234@cluster0.flpmu.mongodb.net/assignment";
+var url = "mongodb+srv://Abhi:12345@cluster0.xijiz.mongodb.net/Businesslistdb?retryWrites=true&w=majority";
 var bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 
@@ -16,7 +24,7 @@ require('./passport-config')(passport)
 //db connect
 mongoose.connect(url, {useNewUrlParser: true}).then((db) => {
     console.log('db connected')
-
+  
 
 }).catch((err) => console.log(err));
 app.listen(process.env.PORT || 3000);
@@ -45,5 +53,4 @@ app.use(function(req, res, next) {
 
 //Routes
 app.use('/', require('./routes/routes.js'));
-//app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));

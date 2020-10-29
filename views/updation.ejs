@@ -1,3 +1,11 @@
+<!--
+    
+Name: Abhilash Pagidimarry
+Student ID: 301130925
+File name: AbhilashP_COMP229_assignment2
+Date: 23/10/2020
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +38,7 @@
             margin-left: 49%;
             margin-top: 7%;
         }
-        .table
+        .table 
         {
             width: 90%;
             top: 0;
@@ -38,7 +46,7 @@
             margin-left: 20%;
         }
         .table th,
-        .table td
+        .table td 
         {
             padding: 8px;
             line-height: 20px;
@@ -46,11 +54,11 @@
             vertical-align: top;
             border-top: 1px solid #ddd;
         }
-        .table th
+        .table th 
         {
             font-weight: bold;
         }
-        .table thead th
+        .table thead th 
         {
             vertical-align: bottom;
         }
@@ -62,7 +70,7 @@
             height: 9vh;
             background: #343a40;
         }
-        .logo
+        .logo 
         {
             position: absolute;
             top: 0;
@@ -123,9 +131,9 @@
                               <td><%= user.contacts[i].phonenum %></td>
                               <td><%= user.contacts[i].email %></td>
                               <td><button type="edit", name = "data", value="<%= JSON.stringify(user.contacts[i])%>" formmethod="get", formaction="/editcontact",>Edit</button>&nbsp;&nbsp;&nbsp;<button type="delete" formmethod="post", formaction="/deletecontact", name = "number", value="<%= user.contacts[i].phonenum %>" >Delete</button></td>
-                            </tr>
+                            </tr>   
                            <% } %>
-
+                       
                     </tr>
                 </table>
             </form>
