@@ -1,17 +1,20 @@
 /*
-Name: Manjit kaur
-Student ID: 301134995
-File name: Manjitkaur_COMP229_assignment2
+Name: Abhilash Pagidimarry
+Student ID: 301130925
+File name: AbhilashP_COMP229_assignment2
 Date: 23/10/2020
 */
 const express = require('express');
+var path = require('path');
 const app = express();
 const flash = require('connect-flash');
 const passport = require('passport');
 
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
-var url = "mongodb+srv://user:1234@cluster0.flpmu.mongodb.net/assignment";
+// var url = "mongodb://localhost/BusinessListDB";
+// var url = "mongodb+srv://user:1234@cluster0.flpmu.mongodb.net/assignment";
+var url = "mongodb+srv://Abhi:12345@cluster0.xijiz.mongodb.net/Businesslistdb?retryWrites=true&w=majority";
 var bodyParser = require("body-parser");
 app.use(express.urlencoded({ extended: true }));
 
@@ -50,3 +53,4 @@ app.use(function(req, res, next) {
 
 //Routes
 app.use('/', require('./routes/routes.js'));
+app.use(express.static(path.join(__dirname, 'public')));

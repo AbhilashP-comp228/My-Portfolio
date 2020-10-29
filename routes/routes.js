@@ -1,11 +1,3 @@
-/*
-    
-Name: Manjit kaur
-Student ID: 301134995
-File name: Manjitkaur_COMP229_assignment2
-Date: 23/10/2020
-
-*/
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
@@ -25,29 +17,29 @@ router.post('/editcontact', ensureAuthenticated, (req, res) => {
   console.log(req.body)
     var obj = {name: req.body.name, phonenum: req.body.phone, email: req.body.email, id: parseInt( req.body.id)}
 
-    
+
     User.updateOne({'_id' : req.user.id, "contacts.id": obj.id}, {"$set": {
         'contacts.$.name': obj.name,
         'contacts.$.phonenum': obj.phonenum,
         'contacts.$.email': obj.email,
-    }}).then(e =>{ 
-    
+    }}).then(e =>{
+
        console.log(e);
         res.redirect('/updatecontact')}).catch(err => console.log(err));
-        
+
     });
 
-router.get('/editcontact', ensureAuthenticated, (req, res) => { 
+router.get('/editcontact', ensureAuthenticated, (req, res) => {
 
 res.render('editcontact.ejs', {contact: JSON.parse(req.query.data)});
 })
 
 router.post('/deletecontact', ensureAuthenticated, (req, res) => {
 var phone = req.body.number;
-User.update( 
-    { "_id" : req.user._id} , 
-    { "$pull" : { "contacts" : { "phonenum" :  phone } } } , 
-    { "multi" : false }  
+User.update(
+    { "_id" : req.user._id} ,
+    { "$pull" : { "contacts" : { "phonenum" :  phone } } } ,
+    { "multi" : false }
 ).then((d) => console.log(d)).catch(error => console.log(error))
 res.redirect("/updatecontact")
 })
@@ -74,7 +66,7 @@ router.get('/logout', (req, res) => {
 
 router.post('/login',  (req, res, next) => {
 
-    
+
     passport.authenticate('local', {
         successRedirect: '/dashboard',
         failureRedirect: '/login',
@@ -87,7 +79,7 @@ function compare(a, b) {
     // Use toUpperCase() to ignore character casing
     const name1 = a.name.toUpperCase();
     const name2 = b.name.toUpperCase();
-  
+
     let comparison = 0;
     if (name1 > name2) {
       comparison = 1;

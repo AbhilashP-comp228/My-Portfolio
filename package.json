@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "description": "Assignment 2",
   "main": "app.js",
- "scripts": {
-  "start": "node app.js"
-},
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Manjit8727/Assignment-2.git"
+    "url": "git+https://github.com/AbhilashP-comp228/My-Portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Manjit8727/Assignment-2/issues"
+    "url": "https://github.com/AbhilashP-comp228/My-Portfolio/issues"
   },
-  "homepage": "https://github.com/Manjit8727/Assignment-2#readme",
+  "homepage": "https://github.com/AbhilashP-comp228/My-Portfolio#readme",
   "dependencies": {
     "connect-flash": "^0.1.1",
     "ejs": "^3.1.5",
